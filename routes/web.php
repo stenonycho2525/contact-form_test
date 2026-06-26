@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('contact._form');
-});
+Route::get('/',
+    [ContactController::class, 'index']
+);
+
+Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
 
 Route::middleware('auth')->group(function () {
     
