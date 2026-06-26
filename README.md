@@ -33,17 +33,17 @@ MySQL 8.4.9
 
 ## 環境構築手順
 
-1. **リポジトリをクローン**
+1. **リポbcxdジトリをクローン**
 
    ```bash
-   git clone https://github.com/stenonycho2525/QAform.git
+   git clone https://github.com/stenonycho2525/contact-form_test.git
    ```
 
 2. **.envファイルの準備**
 
    .env.example をコピーして .env を作成
    ```bash
-   cd QAform
+   cd contact-form_test
    cp .env.example .env
    ```
 
@@ -74,21 +74,29 @@ MySQL 8.4.9
    ./vendor/bin/sail artisan key:generate
    ```
 
-6. **データベースのマイグレーションを作成**
+6. **Vite開発サーバーの起動**
+
+   別のターミナルで下記のコマンドを実行する
+   ※このコマンドは常に実行した状態にしておく
+   ```bash
+   sail npm run dev
+   ```
+
+7. **データベースのマイグレーションを作成**
 
    マイグレーションを作成
    ```bash
    ./vendor/bin/sail artisan migrate
    ```
 
-7. **フロントエンドのビルド**
+8. **フロントエンドのビルド**
 
    JavaScriptのパッケージをインストールする
    ```bash
    ./vendor/bin/sail npm install
    ```
 
-8. **アプリケーションへのアクセス**
+9. **アプリケーションへのアクセス**
 
    ブラウザで以下のURLを開く
    http://localhost
